@@ -6,6 +6,7 @@ import {
   calculateContractAnalysis,
 } from './utils/digitMath';
 import { SAMPLE_PRESETS, SamplePreset } from './services/sampleData';
+import { TrendingUp } from 'lucide-react';
 import { digitFeedService, FeedMode } from './services/derivFeed';
 import { tickAudio } from './utils/audio';
 import { Header } from './components/Header';
@@ -17,6 +18,7 @@ import { PatternRadar } from './components/PatternRadar';
 import { ContractCard } from './components/ContractCard';
 import { FourHourAnalysisSection } from './components/FourHourAnalysisSection';
 import { AnalysisTypeSelector } from './components/AnalysisTypeSelector';
+import { ProbabilityModes } from './components/ProbabilityModes';
 import { PasteSequenceModal } from './components/PasteSequenceModal';
 import { DisclaimerBanner } from './components/DisclaimerBanner';
 import { generateFourHourDataset, analyzeFourHourSequence } from './utils/fourHourAnalyzer';
@@ -304,14 +306,7 @@ export default function App() {
           onClearStream={handleReset}
         />
 
-        <AnalysisTypeSelector
-          selectedType={selectedType}
-          threshold={threshold}
-          target={target}
-          onSelectType={setSelectedType}
-          onThresholdChange={setThreshold}
-          onTargetChange={setTarget}
-        />
+        <ProbabilityModes ticks={ticks} />
 
         <TimelineSequence
           digits={digits}
@@ -326,13 +321,41 @@ export default function App() {
           onOpenPasteModal={() => setIsPasteModalOpen(true)}
         />
 
-        <FourHourAnalysisSection
-          analysis={fourHourAnalysis}
-          latestDigit={latestDigit}
-          config={config}
-        />
+        <details className="bg-[#111622] border border-zinc-800/90 rounded-2xl p-4 sm:p-6 shadow-2xl space-y-5">
+          <summary className="cursor-pointer list-none flex items-center justify-between gap-3 select-none">
+            <div className="flex items-center gap-2.5">
+              <div className="p-2 bg-emerald-500/10 border border-emerald-500/30 rounded-lg text-emerald-400">
+                <TrendingUp className="w-5 h-5" />
+              </div>
+              <div>
+                <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">Advanced Transition Analysis</h2>
+                <p className="text-xs text-zinc-400">
+                  Per-digit next-tick probability engine. Expand for the full matrix. Statistics only.
+                </p>
+              </div>
+            </div>
+            <span className="text-xs text-emerald-400 font-mono">Expand ▾</span>
+          </summary>
 
-        <ContractCard analysis={contractAnalysis} totalDigits={ticks.length} />
+          <div className="space-y-5 pt-4 border-t border-zinc-800">
+            <AnalysisTypeSelector
+              selectedType={selectedType}
+              threshold={threshold}
+              target={target}
+              onSelectType={setSelectedType}
+              onThresholdChange={setThreshold}
+              onTargetChange={setTarget}
+            />
+
+            <FourHourAnalysisSection
+              analysis={fourHourAnalysis}
+              latestDigit={latestDigit}
+              config={config}
+            />
+
+            <ContractCard analysis={contractAnalysis} totalDigits={ticks.length} />
+          </div>
+        </details>
 
         <PatternRadar data={patternRadarData} totalDigits={ticks.length} />
 
