@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Light theme — enabled via ?theme=light (adds .theme-light to <html>). */
+.theme-light {
+  color-scheme: light;
+}
+.theme-light body {
+  background: #eef1f6;
+}
+
+/* Root + section surfaces */
+.theme-light .bg-\[\#0b0f17\] { background-color: #eef1f6 !important; }
+.theme-light .bg-\[\#111622\] { background-color: #ffffff !important; }
+
+/* Text */
+.theme-light .text-white { color: #18181b !important; }
+.theme-light .text-zinc-100 { color: #18181b !important; }
+.theme-light .text-zinc-200 { color: #27272a !important; }
+.theme-light .text-zinc-300 { color: #3f3f46 !important; }
+.theme-light .text-zinc-400 { color: #71717a !important; }
+.theme-light .text-zinc-500 { color: #9aa0aa !important; }
+.theme-light .text-zinc-600 { color: #b6bcc5 !important; }
+
+/* Card / panel backgrounds */
+.theme-light .bg-zinc-900,
+.theme-light .bg-zinc-900\/90,
+.theme-light .bg-zinc-900\/80,
+.theme-light .bg-zinc-900\/70,
+.theme-light .bg-zinc-900\/60 { background-color: #ffffff !important; }
+.theme-light .bg-zinc-950,
+.theme-light .bg-zinc-950\/80,
+.theme-light .bg-zinc-950\/70,
+.theme-light .bg-zinc-950\/60,
+.theme-light .bg-zinc-950\/50,
+.theme-light .bg-zinc-950\/40,
+.theme-light .bg-zinc-950\/30 { background-color: #f2f5f9 !important; }
+.theme-light .bg-zinc-800,
+.theme-light .bg-zinc-800\/90,
+.theme-light .bg-zinc-800\/80 { background-color: #e7ebf1 !important; }
+
+/* Borders */
+.theme-light .border-zinc-800,
+.theme-light .border-zinc-800\/90,
+.theme-light .border-zinc-800\/80,
+.theme-light .border-zinc-800\/70,
+.theme-light .border-zinc-800\/60,
+.theme-light .border-zinc-700,
+.theme-light .border-zinc-700\/80,
+.theme-light .border-zinc-700\/60,
+.theme-light .border-zinc-700\/40,
+.theme-light .border-zinc-700\/30 { border-color: #d6dce5 !important; }
+
+/* Inputs / keypad */
+.theme-light .bg-zinc-950\/60,
+.theme-light input { background-color: #ffffff !important; }
+.theme-light input {
+  border-color: #c9d0da !important;
+  color: #18181b !important;
+}
+
+/* Hover states used on selectable pills */
+.theme-light .hover\:bg-zinc-800:hover { background-color: #e0e5ec !important; }
+.theme-light .hover\:bg-zinc-900\/60:hover { background-color: #eef1f6 !important; }
