@@ -2,5 +2,5 @@
   "name": "Deriv Digit Analyzer - Under 8 / Over 1",
   "description": "Statistical digit analysis tool for Deriv Under 8 and Over 1 synthetic volatility contracts with real-time pattern tracking, rolling windows, and transparent probability metrics.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
